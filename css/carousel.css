@@ -1,0 +1,23 @@
+/* Bootstrap Carusel */
+.myCarousel {
+    height: 1200px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%;
+}
+
+.carousel-control-prev,
+.carousel-control-next:hover {
+    color: #000;
+}
+
+.carousel-content {
+    width: 35%;
+    left: 5rem;
+
+    .arrow-icon {
+        font-size: 20px;
+    }
+}
