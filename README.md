@@ -18,4 +18,4 @@
 
 <h2 id='preview'>Preview</h2>
 
-## ![FreshCart](https://github.com/shd-mn/freshcart-template-bs/blob/master/preview.png)
+## ![FreshCart](https://github.com/shd-mn/freshcart-template-bs/blob/main/preview.png)
