@@ -1,15 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 @import './carousel.css';
 
-* {
+/* * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
+} */
 
 :root {
+    --white-clr: #fff;
+    --black-clr: #000;
     --primary-clr: #0aad0a;
+    --primary-hover-clr: #0d960d;
     --border-clr: #d3d3d3;
+    --text-gray-clr: #5c6c75;
+    --footer-bg: #f0f3f2;
 }
 
 a {
@@ -23,30 +28,122 @@ body {
     font-variation-settings: 'slnt' 0;
 }
 
-.row {
-    margin: 0;
+.btn-primary {
+    background: var(--primary-clr);
+    border: none;
+    &:hover {
+        background: var(--primary-hover-clr);
+    }
 }
 
-.navbar-nav .nav-item {
-    font-size: 14px;
+.header {
+    padding-bottom: 14px;
+    margin-bottom: 60px;
+    border-bottom: 1px solid var(--border-clr);
+
+    .header-top {
+        background-color: var(--footer-bg);
+        margin-bottom: 20px;
+        p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        .btn {
+            font-size: 14px;
+            span {
+                font-size: 14px;
+                line-height: 1;
+            }
+        }
+    }
+
+    .header-center {
+        margin-bottom: 20px;
+        .form-control {
+            font-size: 14px;
+            &:focus {
+                box-shadow: 0 0 2px .25rem #0aad0a4f;
+            }
+        }
+
+        .btn {
+            font-size: 14px;
+        }
+
+        .header-action {
+            .action-btn {
+                position: relative;
+                border: none;
+                outline: none;
+                background: none;
+                i {
+                    font-size: 20px;
+                }
+                span {
+                    position: absolute;
+                    right: -5px;
+                    top: -5px;
+                    width: 18px;
+                    height: 18px;
+                    font-size: 12px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 50%;
+                    color: var(--white-clr);
+                    background-color: var(--primary-clr);
+                }
+                &:hover {
+                    i {
+                        color: var(--primary-clr);
+                    }
+                }
+            }
+        }
+    }
+
+    .navbar {
+        background-color: var(--white-clr) !important;
+
+        .dropdown {
+            .icon {
+                font-size: 18px;
+                line-height: 1;
+            }
+        }
+    }
+
+    .navbar-nav .nav-item {
+        font-size: 14px;
+    }
+
+    .navbar-nav .dropdown-item {
+        font-size: 14px;
+    }
 }
 
-.navbar-nav .dropdown-item {
-    font-size: 14px;
+.hero {
+    margin-bottom: 80px;
 }
 
 /* ======= Featured Categories ======= */
+.featured-categories {
+    margin-bottom: 70px;
+}
+
 .featured-carousel-item {
     transition: all 0.2s;
     border: 1px solid var(--border-clr);
+    height: 100%;
 
     &:hover {
-        border: 1px solid green;
+        border: 1px solid var(--primary-clr);
         box-shadow: 0 2px 5px 2px var(--border-clr);
     }
 
     img {
-        width: 90%;
+        max-width: 80px;
     }
 
     h5 {
@@ -54,7 +151,156 @@ body {
     }
 }
 
+/* ======= Banner Categories =======  */
+
+.banner-section {
+    margin-bottom: 50px;
+
+    .banner-1 {
+        padding: 40px 30px;
+        background: url('../assets/images/grocery-banner.png') no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .banner-2 {
+        padding: 40px 30px;
+        background: url('../assets/images/grocery-banner-2.jpg') no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+/* ======= Popular Products Page ======= */
+.popular-products {
+    margin-bottom: 80px;
+}
+
+.product-card {
+    border: 1px solid var(--border-clr);
+    transition: all 0.3s;
+    &:hover {
+        border: 1px solid var(--primary-clr);
+        box-shadow: 0 2px 5px 2px var(--border-clr);
+    }
+
+    .product-card-action {
+        bottom: 20%;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s;
+
+        .action-btn {
+            width: 34px;
+            height: 34px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            line-height: 1;
+            color: black;
+            background: var(--white-clr);
+            border-radius: 5px;
+            box-shadow: 0 2px 5px 2px var(--border-clr);
+            transition: all 0.3s;
+
+            &:hover {
+                background: var(--primary-clr);
+                color: var(--white-clr);
+            }
+        }
+    }
+
+    .add-btn {
+        display: flex;
+        align-items: center;
+        i {
+            font-size: 18px;
+            line-height: 1;
+        }
+    }
+
+    &:hover {
+        .product-card-action {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+/*  ======= Daily Best Sells Section =======  */
+
+.daily-best-sells {
+    .first {
+        background: url(../assets/images/banner-deal.jpg) no-repeat;
+        background-size: cover;
+        min-height: 420px;
+        height: 100%;
+        .shop-now-btn {
+            background: var(--primary-clr);
+            color: var(--white-clr);
+
+            .arrow-icon {
+                font-size: 20px;
+                line-height: 1;
+            }
+
+            &:hover {
+                background: var(--primary-hover-clr);
+            }
+        }
+    }
+
+    .time {
+        font-size: 13px;
+        font-weight: 500;
+    }
+}
+
+/*  ======= Features Section =======  */
+
+.features-section {
+    padding: 80px 0;
+}
+
 .footer {
-    margin-top: 50px;
-    height: 400px;
+    padding-top: 60px;
+    background-color: var(--footer-bg);
+    .nav-item {
+        a {
+            font-size: 14px;
+            color: var(--text-gray-clr);
+            padding: 0;
+            font-weight: 500;
+            &:hover {
+                color: var(--primary-clr);
+            }
+        }
+    }
+
+    .payment-img {
+        max-width: 140px;
+    }
+
+    .codescandy {
+        color: var(--primary-clr);
+
+        &:hover {
+            color: var(--primary-hover-clr);
+        }
+    }
+
+    .social-btn {
+        border: 1px solid var(--border-clr);
+        padding: 5px;
+        line-height: 1;
+
+        &:hover {
+            color: var(--primary-clr);
+        }
+    }
 }
