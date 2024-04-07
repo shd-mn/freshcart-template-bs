@@ -4,7 +4,7 @@
 </div>
 
 <div align="center">
-    <a href="https://freshcart-template-bs.vercel.app/">Home Page</a> |
+    <a href="https://freshcart-template-bs.vercel.app/" target="_blank">Home Page</a> |
     <a href="#preview">Preview</a>
 </div>
 <br />
